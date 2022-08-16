@@ -11,15 +11,17 @@ steps:
 - task: Docker@2
   displayName: Build an image
   inputs:
-   repository: $(imageName)
+   repository: 
    command: build
    Dockerfile: app/Dockerfile
 
 - task: aquasecScanner@4
   inputs:
-    scanType: 'hosted'
+    image: '$(imageName)'
+    scanType: 'local'
     register: false
     hideBase: false
     showNegligible: false
     windowsScannerVersion: '6.5.0'
     connection: 'Aqua Scanner'
+
