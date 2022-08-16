@@ -1,33 +1,16 @@
-All collection items must start at the same column (1:1)
->  1 | trigger:
-     | ^^^^^^^^
->  2 |         - main
-     | ^^^^^^^^^^^^^^
->  3 |
-     | ^^^^^^^^^^^^^^
->  4 |         pool:
-     | ^^^^^^^^^^^^^^
->  5 |           vmImage: 'ubuntu-latest' # set to windows-latest or another Windows vmImage for Windows builds
-     | ^^^^^^^^^^^^^^
->  6 |
-     | ^^^^^^^^^^^^^^
->  7 |         variables:
-     | ^^^^^^^^^^^^^^
->  8 |           imageName: 'pipelines-javascript-docker'
-     | ^^^^^^^^^^^^^^
->  9 |
-     | ^^^^^^^^^^^^^^
-> 10 |         steps:
-     | ^^^^^^^^^^^^^^
-> 11 |         - task: Docker@2
-     | ^^^^^^^^^^^^^^
-> 12 |           displayName: Build an image
-     | ^^^^^^^^^^^^^^
-> 13 |           inputs:
-     | ^^^^^^^^^^^^^^
-> 14 |             repository: $(imageName)
-     | ^^^^^^^^^^^^^^
-> 15 |             command: build
-     | ^^^^^^^^^^^^^^
-> 16 |             Dockerfile: app/Dockerfile
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         trigger:
+        - main
+
+        pool:
+          vmImage: 'ubuntu-latest' # set to windows-latest or another Windows vmImage for Windows builds
+
+        variables:
+          imageName: 'pipelines-javascript-docker'
+
+        steps:
+        - task: Docker@2
+          displayName: Build an image
+          inputs:
+            repository: $(imageName)
+            command: build
+            Dockerfile: app/Dockerfile
