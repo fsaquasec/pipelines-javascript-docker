@@ -14,3 +14,12 @@ steps:
    repository: $(imageName)
    command: build
    Dockerfile: app/Dockerfile
+
+- task: aquasecScanner@4
+  inputs:
+    scanType: 'hosted'
+    register: false
+    hideBase: false
+    showNegligible: false
+    windowsScannerVersion: '6.5.0'
+    connection: 'Aqua Scanner'
