@@ -16,7 +16,7 @@ steps:
    Dockerfile: app/Dockerfile
 
 - task: aquasecScanner@4
-     inputs:
+  inputs:
       scanType: 'local'
       register: true
       hideBase: false
