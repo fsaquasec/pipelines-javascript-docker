@@ -17,12 +17,11 @@ steps:
 
 - task: aquasecScanner@4
   inputs:
-      scanType: 'local'
+      scanType: $imageName
       register: true
       hideBase: false
       showNegligible: false
       windowsScannerVersion: '6.5.0'
-      scanner: 'registry.aquasec.com/scanner:2208.10.8'
+      scanner: 'registry.aquasec.com/scanner:2022.4'
       connection: 'Aqua Scanner'
       showWillNotFix: true'
-
