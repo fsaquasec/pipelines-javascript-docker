@@ -20,5 +20,6 @@ steps:
       showNegligible: false
       windowsScannerVersion: '6.5.0'
       scanner: 'registry.aquasec.com/scanner:2022.4'
+      runOptions: 'login -u demo@aquasec.com -p 9aV6xpQE'
       connection: 'Aqua Scanner'
       showWillNotFix: true'
