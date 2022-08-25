@@ -22,6 +22,6 @@ steps:
     register: false
     hideBase: false
     showNegligible: false
-    windowsScannerVersion: '6.5.0'
+    windowsScannerVersion: '2208.10.8'
     connection: 'Aqua Scanner'
 
